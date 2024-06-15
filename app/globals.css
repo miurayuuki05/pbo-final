@@ -1,4 +1,56 @@
+/* styles/globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.fixed-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    margin: 0 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.1); /* Transparent background */
+  border-radius: 10px; /* Optional: adds rounded corners */
+  padding: 16px; /* Adjust padding as needed */
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  text-decoration: underline;
+}
