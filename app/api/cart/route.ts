@@ -21,7 +21,7 @@ export async function POST(request : Request) {
     const localToken = cookies().get('token')?.value ?? "";
     const decoded : any = jwt.verify(localToken, process.env.TOKEN_SECRET ?? '')?? "";
     const cartId : any = decoded?.cartUid;
-    const userCart = cartController.getCartById(cartId);
+    const userCart = await cartController.getCartById(cartId);
     
     return new Response(JSON.stringify(userCart), {
         headers: { 'content-type': 'application/json' },
@@ -48,6 +48,7 @@ export async function DELETE(request : Request) {
     const decoded : any = jwt.verify(localToken, process.env.TOKEN_SECRET ?? '')?? "";
     const cartId : any = decoded?.cartUid;
     const userCart = await cartController.deleteItemFromCart(cartId, itemId);
+    console.log(itemId)
     
     return new Response(JSON.stringify(userCart), {
         headers: { 'content-type': 'application/json' },
