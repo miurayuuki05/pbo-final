@@ -1,0 +1,48 @@
+'use client'
+import { useState } from "react"
+import { useRouter } from "next/navigation";
+
+export interface Profile{
+  data: {
+    name: string;
+    email: string;
+    cartId: string;
+    profileImg : string;
+    phoneNum : string;
+    address : string;
+    gender : string;
+  }
+}
+
+export default function Profile(){
+  const router = useRouter()
+  const [userInfo, setUserLogin] = useState({
+    email: '',
+    pwd: ''
+  })
+
+  const userLogin = async () => {
+    const res = await fetch('http://localhost:3000/api/user/user-login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: userInfo.email,
+        pwd: userInfo.pwd
+      })
+    }).then(() => router.push('/profile'))
+  }    
+
+  return(
+    <div>
+        <div>
+          <form>
+            <input type="text" placeholder="Email" onChange={(e) => setUserLogin({...userInfo, email: e.target.value})} required/>
+            <input type="password" placeholder="Password" onChange={(e) => setUserLogin({...userInfo, pwd: e.target.value})} required/>
+            <div className="w-16 text-center p-1 cursor-pointer rounded-full bg-neutral-300 hover:bg-neutral-500" onClick={userLogin}>Login</div>
+          </form>
+        </div>
+    </div>
+  )
+}

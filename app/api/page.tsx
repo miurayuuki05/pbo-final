@@ -88,6 +88,12 @@ export default function Api(){
                         <td className="border ">Logout user</td>
                         <td className="border ">Required</td>
                     </tr>
+                    <tr>
+                        <td className="border ">POST</td>
+                        <td className="border ">/api/user/profile</td>
+                        <td className="border ">Get user profile</td>
+                        <td className="border ">Required</td>
+                    </tr>
                 </tbody>
 
             </table>

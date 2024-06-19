@@ -3,6 +3,7 @@ import { ProductModel, Product } from "../model/Product";
 import { User, UserModel } from "../model/User";
 import { Token, TokenModel } from "../model/Token";
 import { Cart, CartModel } from "../model/Cart";
+import { Profile, ProfileModel } from "../model/Profile";
 
 export class MainController {
     linkMongo = process.env.MONGODB_LINK ?? '';
@@ -14,10 +15,11 @@ export class MainController {
     };
 
     protected newUser: User = {
-        cartId: '',
         name: '',
         email: '',
-        pwd: ''
+        pwd: '',
+        cartId: '',
+        profileId: ''
     };
 
     protected newToken: Token = {
@@ -29,6 +31,17 @@ export class MainController {
         cartId: '',
         product: [],
         totalPrice: 0
+    };
+
+    protected newProfile: Profile = {
+        profileId: '',
+        name: '',
+        email: '',
+        cartId: '',
+        profileImg: '',
+        phoneNum: '',
+        address: '',
+        gender: ''
     };
 
     async connectMongo() {

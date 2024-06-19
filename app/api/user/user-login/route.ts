@@ -19,8 +19,7 @@ export async function POST(request : Request) {
             headers: { 'content-type': 'application/json' },
         });
     }
-    const cookieStore = cookies()
-    cookieStore.set({
+    const cookieStore = cookies().set({
         name: 'token',
         value: logUser,
         secure: true,

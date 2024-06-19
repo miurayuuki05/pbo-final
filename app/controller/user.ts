@@ -45,7 +45,7 @@ export class UserController extends MainController {
 
     async loginUser(email: string, pwd: string) {
         this.connectMongo();
-        const user = await UserModel.findOne({email});
+        const user = await UserModel.findOne({email : email});
         if (!user) {
             return 720; // User not found
         }
@@ -54,7 +54,8 @@ export class UserController extends MainController {
             return 721; // Password incorrect
         } 
         const cartId = user.cartId;
-        const token = jwt.sign({_id: user._id, cartUid: cartId}, process.env.TOKEN_SECRET ?? '', {expiresIn: '7d'});
+        const profileId = user.profileId;        
+        const token = jwt.sign({_id: user._id, cartUid: cartId, profileUid: profileId}, process.env.TOKEN_SECRET ?? '', {expiresIn: '7d'});
         const newToken = new TokenModel({token, email});
         newToken.save();
         
