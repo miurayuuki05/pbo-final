@@ -70,10 +70,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-white py-16 p-20">
-        <main className="flex flex-col items-center justify-center text-center">
-          <Carousel />
-        </main>
+      <div className="bg-white py-16 p-20 h-36">
+        <Carousel />
       </div>
     </>
   )
