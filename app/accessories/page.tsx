@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           <div className='col-span-5 p-6'>
             <h1 className="text-4xl mb-4">Accessories</h1>
-            <p className="mb-4">Enhance your look with our stylish accessories collection. Whether you're looking for bags, jewelry, belts, or hats, we have everything you need to complete your outfit. Discover unique pieces that add a touch of personality to your wardrobe. Shop now and find the perfect accessories to match your style.</p>
+            <p className="mb-4">Enhance your look with our stylish accessories collection. Whether you&apos;re looking for bags, jewelry, belts, or hats, we have everything you need to complete your outfit. Discover unique pieces that add a touch of personality to your wardrobe. Shop now and find the perfect accessories to match your style.</p>
             <p className="mb-4">Showing 1-7 </p>
             <div className="grid grid-cols-3 gap-4">
               {/* Product items here */}

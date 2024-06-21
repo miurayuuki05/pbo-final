@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           <div className='col-span-5 p-6'>
             <h1 className="text-4xl mb-4">Women</h1>
-            <p className="mb-4"> Discover our wide selection of women's clothing, accessories, and more. From the latest trends to timeless classics, find everything you need to express your personal style. Shop now and enjoy exclusive offers and unbeatable prices. Elevate your wardrobe with our curated collection designed to make you look and feel your best.</p>
+            <p className="mb-4"> Discover our wide selection of women&apos;s clothing, accessories, and more. From the latest trends to timeless classics, find everything you need to express your personal style. Shop now and enjoy exclusive offers and unbeatable prices. Elevate your wardrobe with our curated collection designed to make you look and feel your best.</p>
             <p className="mb-4">Showing 1–12</p>
             <div className="grid grid-cols-3 gap-4">
               {/* Product items here */}

@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           <div className='col-span-5 p-6'>
             <h1 className="text-4xl mb-4">Men</h1>
-            <p className="mb-4">Explore our extensive range of men's fashion and accessories. From casual wear to formal attire, our collection is designed to meet all your style needs. Discover the latest trends and timeless pieces that will keep you looking sharp. Shop now for exclusive deals and elevate your wardrobe with our premium selection.</p>
+            <p className="mb-4">Explore our extensive range of men&apos;s fashion and accessories. From casual wear to formal attire, our collection is designed to meet all your style needs. Discover the latest trends and timeless pieces that will keep you looking sharp. Shop now for exclusive deals and elevate your wardrobe with our premium selection.</p>
             <p className="mb-4">Showing 1–12 </p>
             <div className="grid grid-cols-3 gap-4">
               {/* Product items here */}
