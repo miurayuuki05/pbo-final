@@ -1,0 +1,24 @@
+.navbar button {
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 1.0); /* Transparent background */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    padding: 16px; /* Adjust padding as needed */
+  }
