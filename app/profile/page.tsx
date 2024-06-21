@@ -49,19 +49,19 @@ export default function Profile(){
   }
 
 
-  const userLogin = async () => {
-    const res = await fetch('http://localhost:3000/api/user/user-login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: userInfo.email,
-        pwd: userInfo.pwd
-      })
-    })
-    const data = await res.json()
-  }    
+  // const userLogin = async () => {
+  //   const res = await fetch('http://localhost:3000/api/user/user-login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       email: userInfo.email,
+  //       pwd: userInfo.pwd
+  //     })
+  //   })
+  //   const data = await res.json()
+  // }    
 
   useEffect(() => {
     fetch('http://localhost:3000/api/user/profile', {
@@ -76,7 +76,7 @@ export default function Profile(){
     })
       .then(res => res.json())
       .then(data => setProfile(data))
-      .then(() => setProfileState(true))
+      .then(() => setProfileState(true)).catch(() => setProfileState(true))
     
   }, [])
 
