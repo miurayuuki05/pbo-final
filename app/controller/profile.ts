@@ -23,4 +23,9 @@ export class ProfileController extends MainController{
         this.connectMongo();
         return await ProfileModel.findOne({profileId: id});
     }
+
+    async editProfile(profile: Profile) {
+        this.connectMongo();
+        return await ProfileModel.updateOne({profileId: profile.profileId}, profile);
+    }
 }
