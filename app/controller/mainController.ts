@@ -4,7 +4,7 @@ import { User, UserModel } from "../model/User";
 import { Token, TokenModel } from "../model/Token";
 import { Cart, CartModel } from "../model/Cart";
 import { Profile, ProfileModel } from "../model/Profile";
-import { Otp } from "../model/Otp";
+import { Otp, OtpModel } from "../model/Otp";
 
 export class MainController {
     linkMongo = process.env.MONGODB_LINK ?? '';
@@ -20,7 +20,8 @@ export class MainController {
         email: '',
         pwd: '',
         cartId: '',
-        profileId: ''
+        profileId: '',
+        verified: false
     };
 
     protected newToken: Token = {

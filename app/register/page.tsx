@@ -21,16 +21,20 @@ export default function Register(){
         email: userInfo.email,
         pwd: userInfo.pwd
       })
-    }).then(() => router.push('/profile'))
+    }).then(() => router.push('/verify-otp'))
   }    
 
   return(
-    <div>
-        <div>
-          <form>
-            <input type="text" placeholder="Name" onChange={(e) => setUserRegis({...userInfo, name: e.target.value})} required/>
-            <input type="text" placeholder="Email" onChange={(e) => setUserRegis({...userInfo, email: e.target.value})} required/>
-            <input type="password" placeholder="Password" onChange={(e) => setUserRegis({...userInfo, pwd: e.target.value})} required/>            
+    <div className="flex justify-center bg-[#e2e2e2] h-screen drop-shadow-md">
+        <div className="h-[380px] p-5 bg-white mt-24">
+          <h3 className="font-bold text-2xl">Register</h3>
+          <form className="flex flex-col mt-5">
+            <label className="text-sm">Name</label>
+            <input className="border p-1" type="text" placeholder="Name" onChange={(e) => setUserRegis({...userInfo, name: e.target.value})} required/>
+            <label className="text-sm">Email</label>
+            <input className="border p-1" type="text" placeholder="Email" onChange={(e) => setUserRegis({...userInfo, email: e.target.value})} required/>
+            <label className="text-sm">Password</label>
+            <input className="border p-1" type="password" placeholder="Password" onChange={(e) => setUserRegis({...userInfo, pwd: e.target.value})} required/>            
             <div className="cursor-pointer" onClick={userRegister}>Register</div>
           </form>
         </div>

@@ -11,6 +11,6 @@ const otpSchema = new Schema<Otp>({
     email: String
 });
 
-const OtpModel = mongoose.models.Token || mongoose.model("Otp", otpSchema);
+const OtpModel = mongoose.models.Otp || mongoose.model("Otp", otpSchema);
 
 export { OtpModel };

@@ -8,11 +8,12 @@ export async function POST(request : Request){
 
     const isValid = await otpController.verifyOtp(email, inputOtp)
     if(isValid){
-        return new Response(JSON.stringify({code : 200}), {
+        await otpController.deleteOtp(email)
+        return new Response(JSON.stringify({code : 200, status : "correct otp"}), {
             headers: { 'content-type': 'application/json' },
         });
     }
-    return new Response(JSON.stringify({code : 400}), {
+    return new Response(JSON.stringify({code : 400, status : "invalid otp"}), {
         headers: { 'content-type': 'application/json' },
     });
 }

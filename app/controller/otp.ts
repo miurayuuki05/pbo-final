@@ -22,8 +22,11 @@ export class OtpController extends MainController{
 
     async verifyOtp(email : string, inputOtp : number){
         this.connectMongo();
-        const otpDb = OtpModel.findOne({email : email})
-        return true
+        const otpDb = await OtpModel.findOne({email : email})
+        if(otpDb?.otp === inputOtp){
+            return true;
+        }
+        return false;
     }
 
     async deleteOtp(email: string) {

@@ -7,6 +7,7 @@ export interface User{
     pwd: string;
     cartId: string;
     profileId : string;
+    verified : boolean;
 }
 
 const userSchema = new Schema<User>({
@@ -14,7 +15,8 @@ const userSchema = new Schema<User>({
     email: String,
     pwd: String,
     cartId : String,
-    profileId : String
+    profileId : String,
+    verified : Boolean
 }); 
 
 const UserModel = mongoose.models.User || mongoose.model("User", userSchema);
